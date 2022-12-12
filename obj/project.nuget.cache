@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l69tCMC1REiRltiovMHIVRRFSeDhClbH9IbR99tpBfXgpJYLvsbKiwiPWwLQ+P+WA0queiSju9lnT8HbhAIkbQ==",
+  "dgSpecHash": "quNHMtXrdukYdO8SfItnMKiM5bXEfdi1+YsSLvFrH/W8EYyqnc/wsKN9kLAkuTjs1aqe73s9Nsn+0W21ZWqcAg==",
   "success": true,
-  "projectFilePath": "/Users/gmk/Desktop/projects/Api/Api.csproj",
+  "projectFilePath": "/Users/gmk/Desktop/projects/KtunStajBE/Api.csproj",
   "expectedPackageFiles": [
     "/Users/gmk/.nuget/packages/microsoft.aspnetcore.jsonpatch/6.0.6/microsoft.aspnetcore.jsonpatch.6.0.6.nupkg.sha512",
     "/Users/gmk/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/6.0.6/microsoft.aspnetcore.mvc.newtonsoftjson.6.0.6.nupkg.sha512",

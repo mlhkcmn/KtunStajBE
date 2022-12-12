@@ -2108,11 +2108,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gmk/Desktop/projects/Api/Api.csproj",
+      "projectUniqueName": "/Users/gmk/Desktop/projects/KtunStajBE/Api.csproj",
       "projectName": "Api",
-      "projectPath": "/Users/gmk/Desktop/projects/Api/Api.csproj",
+      "projectPath": "/Users/gmk/Desktop/projects/KtunStajBE/Api.csproj",
       "packagesPath": "/Users/gmk/.nuget/packages/",
-      "outputPath": "/Users/gmk/Desktop/projects/Api/obj/",
+      "outputPath": "/Users/gmk/Desktop/projects/KtunStajBE/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/gmk/.nuget/NuGet/NuGet.Config"
