@@ -27,4 +27,5 @@ public class Post
         public DateTime CreateDate {get; set;}
         public string UserName { get; set; }
         public int UserId { get; set; }
+        public int Photo_Id { get; set; }
     }

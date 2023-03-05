@@ -2103,19 +2103,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/gmk/.nuget/packages/": {}
+    "/Users/zcaymaz/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gmk/Desktop/projects/KtunStajBE/Api.csproj",
+      "projectUniqueName": "/Users/zcaymaz/Desktop/projects/KtunStajBE/Api.csproj",
       "projectName": "Api",
-      "projectPath": "/Users/gmk/Desktop/projects/KtunStajBE/Api.csproj",
-      "packagesPath": "/Users/gmk/.nuget/packages/",
-      "outputPath": "/Users/gmk/Desktop/projects/KtunStajBE/obj/",
+      "projectPath": "/Users/zcaymaz/Desktop/projects/KtunStajBE/Api.csproj",
+      "packagesPath": "/Users/zcaymaz/.nuget/packages/",
+      "outputPath": "/Users/zcaymaz/Desktop/projects/KtunStajBE/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/gmk/.nuget/NuGet/NuGet.Config"
+        "/Users/zcaymaz/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
