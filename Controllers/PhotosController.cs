@@ -14,7 +14,19 @@ namespace Api.Controllers
         {
             _dbContext = dbContext;
         }
-
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var photo = _dbContext.Photos.Find(id);
+            if (photo != null)
+            {
+                return Ok(photo);
+            }
+            else
+            {
+                return StatusCode(StatusCodes.Status404NotFound);
+            }
+        }
         [HttpPost]
         public PhotoReturnType Post([FromBody] Photo photo)
         {
