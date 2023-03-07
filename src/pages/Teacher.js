@@ -4,7 +4,27 @@ import Navbar from '../components/Navbar'
 import { DataGrid } from '@mui/x-data-grid';
 import ModalButton from '../components/ModalButton';
 
-const columns = [
+const Teacher = () => {
+    const [tableData, setTableData] = useState([]);
+
+    const getAllPosts = async () => {
+        try {
+            const res = await axios.get('https://localhost:7050/api/Posts');
+            return res.data;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const getPosts = async () => {
+        setTableData(await getAllPosts())
+    }
+
+    useEffect(() => {
+        getPosts();
+    }, []);
+
+    const columns = [
 
     { field: 'id', headerName: 'ID', width: 90 },
 
@@ -50,26 +70,6 @@ const columns = [
         )
     },
 ];
-
-const Teacher = () => {
-    const [tableData, setTableData] = useState([]);
-
-    const getAllPosts = async () => {
-        try {
-            const res = await axios.get('https://localhost:7050/api/Posts');
-            return res.data;
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const getPosts = async () => {
-        setTableData(await getAllPosts())
-    }
-
-    useEffect(() => {
-        getPosts();
-    }, []);
 
     return (
         <>

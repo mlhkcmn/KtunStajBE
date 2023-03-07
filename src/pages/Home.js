@@ -3,7 +3,6 @@ import { Box, Grid, Typography } from '@mui/material'
 import axios from "axios";
 import { FormInput, MultilineInput, MultilineInput1 } from "../components/common/Input";
 import ImageUploading from 'react-images-uploading';
-import { Buffer } from 'buffer';
 import FileUpload from "../components/common/FileUpload";
 
 const Home = () => {
@@ -33,12 +32,12 @@ const Home = () => {
         corporationWebAddress: "",
         corporationMail: "",
         corporationShef: "",
-        Photo_Id: 0
+        Student_Photo_Id: 0
     });
     const postSubmit = async (e) => {
         try {
             const photo = await axios.post('https://localhost:7050/api/Photos', { Photo_Id: 0, Photo_Code: servicePhotoBase64 });
-            post.Photo_Id = photo.data.id;
+            post.Student_Photo_Id = photo.data.id;
             await axios.post('https://localhost:7050/api/Posts', { ...post, userName: localStorage.getItem('userName'), userId: localStorage.getItem('userId') })
 
             window.location.href = "/";
@@ -48,9 +47,14 @@ const Home = () => {
     }
 
     const onChange = (imageList, addUpdateIndex) => {
+        console.log(imageList)
         setServicePhotoBase64(imageList[0].data_url);
         setImages(imageList);
     };
+
+    const uploadCorpImage = (e) => {
+        console.log('ee', e);
+    }
 
     const maxNumber = 1;
 
@@ -342,9 +346,61 @@ const Home = () => {
                     </Grid>
                     <Grid item xs={2} />
                     <Grid item xs={4}>
-                        <FileUpload
-                            header="İş veren onayı (Kaşe/İmza/Tarih)"
-                        />
+                        <Box sx={{ borderRadius: '10px', bgcolor: '#f5f5f5', border: '2px dashed #CEEBFF' }}>
+                            <Typography className='FileUploadHeader'>
+                                İş veren onayı (Kaşe/İmza/Tarih)
+                            </Typography>
+                            <br />
+                            <Typography className='FileUploadText'>
+                                ""
+                            </Typography>
+                            <br />
+
+                            <ImageUploading
+                                multiple
+                                value={images}
+                                onChange={onChange}
+                                maxNumber={maxNumber}
+                                dataURLKey="data_url"
+                            >
+                                {({
+                                    imageList,
+                                    onImageUpload,
+                                    onImageRemoveAll,
+                                    onImageUpdate,
+                                    onImageRemove,
+                                    isDragging,
+                                    dragProps,
+                                }) => (
+                                    // write your building UI
+                                    <div>
+                                        <button
+                                            className='FileUploadButton'
+                                            style={isDragging ? { color: 'red' } : undefined}
+                                            onClick={(e) => onImageUpload(uploadCorpImage(e))}
+                                            {...dragProps}>
+                                            Tıkla ya da Sürükle
+                                        </button>
+                                        &nbsp;
+                                        <button className='FileUploadButton' onClick={onImageRemoveAll}>
+                                            Fotoğrafları Kaldır
+                                        </button>
+                                        <br />
+                                        <br />
+                                        {imageList.map((image, index) => (
+                                            <div key={index} className="image-item">
+                                                <img src={image['data_url']} alt="" width="200" />
+                                                <div className="image-item__btn-wrapper">
+                                                    <button onClick={() => onImageUpdate(index)}>Güncelle</button>
+                                                    <button onClick={() => onImageRemove(index)}>Kaldır</button>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </ImageUploading>
+                            <br />
+                        </Box>
                     </Grid>
                     <Grid item xs={4}>
                         <FileUpload

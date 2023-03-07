@@ -25,15 +25,6 @@ const ModalButton = (props) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const getPostsByPostId = async () => {
-        try {
-            const res = await axios.get(`https://localhost:7050/api/Posts/${localStorage.getItem('postId')}`);
-            console.log(res.data);
-            return res.data;
-        } catch (error) {
-            console.log(error);
-        }
-    };
     return (
         <>
             <Button onClick={handleOpen} className='submissionTableViewButton'>
@@ -50,12 +41,6 @@ const ModalButton = (props) => {
                         <Grid container paddingTop={4} justifyContent='center' alignItems={'center'}>
                             <Grid item xs={2}/>
                             <Info />
-                            <Grid item xs={8} sx={{ textAlign: 'center'}}>
-                                <FileUpload
-                                    header={props.header}
-                                    text="Belgede ki bilgilerin doğru olduğunu bildiririm."
-                                />
-                            </Grid>
                             <Grid xs="6" lg="6" paddingTop={'18px'} justifyContent="center" alignItems={'center'} textAlign="center">
                             <button className='approvButtonCancel'>
                                 <span className='approvText'>İptal</span>
